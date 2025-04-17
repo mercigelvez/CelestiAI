@@ -34,7 +34,7 @@
                         @foreach($spreads as $key => $spread)
                         <div class="relative">
                             <input type="radio" id="spread_{{ $key }}" name="spread_type" value="{{ $key }}"
-                                class="absolute opacity-0 w-full h-full cursor-pointer z-10"
+                                class="absolute opacity-0 w-full h-full cursor-pointer z-10 peer"
                                 {{ $spreadType == $key ? 'checked' : '' }}>
                             <label for="spread_{{ $key }}"
                                 class="block p-4 rounded-lg border border-purple-700 bg-black bg-opacity-20 cursor-pointer transition-all

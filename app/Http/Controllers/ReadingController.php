@@ -68,7 +68,7 @@ class ReadingController extends Controller
         ]);
 
         // Determine number of cards based on spread type
-        $cardCount = match($request->spread_type) {
+        $cardCount = match ($request->spread_type) {
             'single' => 1,
             'three-card' => 3,
             'celtic-cross' => 10,
@@ -129,48 +129,55 @@ class ReadingController extends Controller
      */
     private function getTarotDeck()
     {
-        // Major Arcana
+        // Base path for all tarot images
+        $imagePath = 'images/tarot/';
+
+        // Major Arcana - no changes needed
         $majorArcana = [
-            ['name' => 'The Fool', 'image' => 'fool.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Magician', 'image' => 'magician.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The High Priestess', 'image' => 'high_priestess.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Empress', 'image' => 'empress.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Emperor', 'image' => 'emperor.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Hierophant', 'image' => 'hierophant.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Lovers', 'image' => 'lovers.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Chariot', 'image' => 'chariot.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'Strength', 'image' => 'strength.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Hermit', 'image' => 'hermit.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'Wheel of Fortune', 'image' => 'wheel_of_fortune.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'Justice', 'image' => 'justice.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Hanged Man', 'image' => 'hanged_man.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'Death', 'image' => 'death.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'Temperance', 'image' => 'temperance.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Devil', 'image' => 'devil.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Tower', 'image' => 'tower.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Star', 'image' => 'star.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Moon', 'image' => 'moon.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The Sun', 'image' => 'sun.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'Judgement', 'image' => 'judgement.jpg', 'type' => 'major', 'orientation' => 'upright'],
-            ['name' => 'The World', 'image' => 'world.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Fool', 'image' => $imagePath . 'the-fool-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Magician', 'image' => $imagePath . 'the-magician-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The High Priestess', 'image' => $imagePath . 'the-high-priestess-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Empress', 'image' => $imagePath . 'the-empress-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Emperor', 'image' => $imagePath . 'the-emperor-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Hierophant', 'image' => $imagePath . 'The-Hierophant-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Lovers', 'image' => $imagePath . 'The-Lovers-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Chariot', 'image' => $imagePath . 'The-Chariot-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'Strength', 'image' => $imagePath . 'The-Strength-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Hermit', 'image' => $imagePath . 'The-Hermit-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'Wheel of Fortune', 'image' => $imagePath . 'The-Wheel-of-Fortune-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'Justice', 'image' => $imagePath . 'The-Justice-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Hanged Man', 'image' => $imagePath . 'The-Hanged-Man-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'Death', 'image' => $imagePath . 'The-Death-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'Temperance', 'image' => $imagePath . 'The-Temperance-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Devil', 'image' => $imagePath . 'The-Devil-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Tower', 'image' => $imagePath . 'The-Tower-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Star', 'image' => $imagePath . 'The-Star-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Moon', 'image' => $imagePath . 'The-Moon-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The Sun', 'image' => $imagePath . 'The-Sun-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'Judgement', 'image' => $imagePath . 'The-Judgement-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
+            ['name' => 'The World', 'image' => $imagePath . 'The-World-tarot-card.jpg', 'type' => 'major', 'orientation' => 'upright'],
         ];
 
-        // Minor Arcana
-        $suits = ['cups', 'pentacles', 'swords', 'wands'];
-        $cards = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Page', 'Knight', 'Queen', 'King'];
+        // Minor Arcana - updated to use hyphens instead of underscores
+        $suits = ['Cups', 'Pentacles', 'Swords', 'Wands'];
+        $cards = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Page', 'Knight', 'Queen', 'King'];
+        $cardsNumeric = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Page', 'Knight', 'Queen', 'King'];
 
         $minorArcana = [];
-        foreach ($suits as $suit) {
-            foreach ($cards as $card) {
-                $name = $card . ' of ' . ucfirst($suit);
-                $image = strtolower($card) . '_of_' . $suit . '.jpg';
+        foreach ($suits as $index => $suit) {
+            foreach ($cards as $cardIndex => $card) {
+                $cardNumeric = $cardsNumeric[$cardIndex];
+                $name = $cardNumeric . ' of ' . $suit;
+
+                // Format image filename with hyphens instead of underscores to match your actual files
+                $image = $imagePath . $card . '-of-' . $suit . '-tarot-card.jpg';
+
                 $minorArcana[] = ['name' => $name, 'image' => $image, 'type' => 'minor', 'orientation' => 'upright'];
             }
         }
 
         return array_merge($majorArcana, $minorArcana);
     }
-
     /**
      * Draw random cards from the deck.
      */
@@ -351,9 +358,18 @@ class ReadingController extends Controller
     private function getRandomTheme()
     {
         $themes = [
-            'transformation', 'spiritual growth', 'inner wisdom', 'divine timing',
-            'emotional healing', 'renewed purpose', 'self-discovery', 'cosmic alignment',
-            'intuitive awakening', 'soul purpose', 'karmic balance', 'sacred knowledge'
+            'transformation',
+            'spiritual growth',
+            'inner wisdom',
+            'divine timing',
+            'emotional healing',
+            'renewed purpose',
+            'self-discovery',
+            'cosmic alignment',
+            'intuitive awakening',
+            'soul purpose',
+            'karmic balance',
+            'sacred knowledge'
         ];
 
         return $themes[array_rand($themes)];

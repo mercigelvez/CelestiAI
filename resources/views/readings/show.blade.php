@@ -63,7 +63,7 @@
 
                         <!-- Card image -->
                         <div class="relative">
-                            <img src="{{ asset('images/tarot/' . $card['image']) }}"
+                            <img src="{{ asset($card['image']) }}" alt="{{ $card['name'] }}"
                                  alt="{{ $card['name'] }}"
                                  class="mx-auto rounded-md w-full {{ $card['orientation'] === 'reversed' ? 'transform rotate-180' : '' }}">
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 rounded-md"></div>
