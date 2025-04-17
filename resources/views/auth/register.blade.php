@@ -23,7 +23,7 @@
                 @csrf
 
                 <div class="mb-6">
-                    <label for="name" class="block text-sm font-medium text-purple-200 mb-1">Name</label>
+                    <label for="name" class="block text-sm font-medium text-purple-200 mb-1">Username <label class="text-pink-500 text-xs mt-1">*</label> </label>
                     <input type="text" id="name" name="name" value="{{ old('name') }}" required autofocus
                         class="w-full bg-black bg-opacity-50 border border-purple-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                     @error('name')
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="email" class="block text-sm font-medium text-purple-200 mb-1">Email</label>
+                    <label for="email" class="block text-sm font-medium text-purple-200 mb-1">Email <label class="text-pink-500 text-xs mt-1">*</label></label>
                     <input type="email" id="email" name="email" value="{{ old('email') }}" required
                         class="w-full bg-black bg-opacity-50 border border-purple-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                     @error('email')
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="password" class="block text-sm font-medium text-purple-200 mb-1">Password</label>
+                    <label for="password" class="block text-sm font-medium text-purple-200 mb-1">Password <label class="text-pink-500 text-xs mt-1">*</label></label>
                     <input type="password" id="password" name="password" required
                         class="w-full bg-black bg-opacity-50 border border-purple-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                     @error('password')
@@ -50,13 +50,13 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="password_confirmation" class="block text-sm font-medium text-purple-200 mb-1">Confirm Password</label>
+                    <label for="password_confirmation" class="block text-sm font-medium text-purple-200 mb-1">Confirm Password <label class="text-pink-500 text-xs mt-1">*</label></label>
                     <input type="password" id="password_confirmation" name="password_confirmation" required
                         class="w-full bg-black bg-opacity-50 border border-purple-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                 </div>
 
                 <div class="mb-6">
-                    <label for="birth_date" class="block text-sm font-medium text-purple-200 mb-1">Birth Date (Optional)</label>
+                    <label for="birth_date" class="block text-sm font-medium text-purple-200 mb-1">Birth Date</label>
                     <input type="date" id="birth_date" name="birth_date" value="{{ old('birth_date') }}"
                         class="w-full bg-black bg-opacity-50 border border-purple-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                 </div>
