@@ -34,10 +34,8 @@ class LoginController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('guest')->except('logout');
-    // }
+    protected $middleware = ['guest'];
+    protected $except = ['logout'];
 
     /**
      * Show the application's login form.
