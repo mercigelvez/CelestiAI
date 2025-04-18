@@ -25,7 +25,7 @@
                 <input type="hidden" name="token" value="{{ $token }}">
 
                 <div class="mb-6">
-                    <label for="email" class="block text-sm font-medium text-purple-200 mb-1">Email</label>
+                    <label for="email" class="block text-sm font-medium text-purple-200 mb-1">Email <label class="text-pink-500 text-xs mt-1">*</label></label>
                     <input type="email" id="email" name="email" value="{{ $email ?? old('email') }}" required autofocus
                         class="w-full bg-black bg-opacity-50 border border-purple-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                     @error('email')
