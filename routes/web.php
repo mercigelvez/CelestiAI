@@ -46,5 +46,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/readings/new', [ReadingController::class, 'create'])->name('readings.create');
     Route::post('/readings', [ReadingController::class, 'store'])->name('readings.store');
     Route::get('/readings/{reading}', [ReadingController::class, 'show'])->name('readings.show');
-    Route::get('/readings/history', [ReadingController::class, 'history'])->name('readings.history');
+    Route::get('/history', [ReadingController::class, 'history'])->name('readings.history');
 });
