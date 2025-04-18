@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="password" class="block text-sm font-medium text-purple-200 mb-1">New Password</label>
+                    <label for="password" class="block text-sm font-medium text-purple-200 mb-1">New Password <label class="text-pink-500 text-xs mt-1">*</label></label>
                     <input type="password" id="password" name="password" required
                         class="w-full bg-black bg-opacity-50 border border-purple-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                     @error('password')
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="password-confirm" class="block text-sm font-medium text-purple-200 mb-1">Confirm Password</label>
+                    <label for="password-confirm" class="block text-sm font-medium text-purple-200 mb-1">Confirm Password <label class="text-pink-500 text-xs mt-1">*</label></label>
                     <input type="password" id="password-confirm" name="password_confirmation" required
                         class="w-full bg-black bg-opacity-50 border border-purple-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
                 </div>
