@@ -1,27 +1,77 @@
-# ✨ Magical Git Commits 🔮  
+```markdown
+# 🔮 AI-Powered Tarot Reading Web App
 
-Enhance your Git commit messages with **tarot and magic-themed emojis** to add a mystical touch to your project’s history!  
+A mystical web app that generates AI-powered tarot card readings with customizable spreads and intuitive interpretations.
+
+![Demo Screenshot]
+<div align="center">
+  <img src="public/images/demo.png" alt="cosmo" height="55" width="100%">
+</div>
+---
+
+## 🌟 Features
+- **AI-Generated Readings**: NLP-powered interpretations
+- **Multiple Spreads**: Past-Present-Future, Celtic Cross, and more
+- **User Profiles**: Save readings (with authentication)
 
 ---
 
-## 🎴 Tarot & Magic-Themed Emoji Guide  
+## 🧙‍♂️ Installation
+```bash
+# Clone repository
+git clone https://github.com/mercigelvez/CelestiAI.git
+cd celestiai
 
-| Emoji | Meaning (Best For) | Example Commit |
-|-------|-------------------|----------------|
-| ✨  | New features, enhancements | `✨ Add moon phase calculator` |  
-| 🔮  | Tarot/prediction-related code | `🔮 Implement tarot card API` |  
-| 🌙  | Nightly updates, dreamy logic | `🌙 Update dream journal loader` |  
-| 🃏  | Wildcard/Joker changes | `🃏 Refactor dynamic card shuffler` |  
-| 🕯️  | Bug fixes, enlightenment | `🕯️ Fix candle flickering animation` |  
-| 🌟  | Major improvements | `🌟 Optimize starlight renderer` |  
-| 🧿  | Protection (error handling) | `🧿 Add anti-bug validation` |  
-| 📜  | Documentation updates | `📜 Add tarot spread examples` |  
-| 🎱  | Decision-making logic | `🎱 Add magic 8-ball response` |  
-| ☄️  | Fast, breaking changes | `☄️ Rewrite cosmic energy flow` |  
+# Install PHP dependencies
+composer install
 
+# Install JS dependencies
+npm install
+
+# Configure environment variables
+cp .env.example .env
+```
+
+Configure your `.env` files.
 ---
 
-## 🌌 How to Use  
-1. **Commit with emojis**:  
+## 🎴 Usage
+1. **Run services**:
    ```bash
-   git commit -m "✨ Add new moon ritual function"
+   # Laravel
+   php artisan serve
+   ```
+2. Access `http://localhost:8000`
+3. Draw cards → Get AI-generated readings!
+
+---
+
+## 🌌 Magical Git Commits
+Enhance commits with tarot-themed emojis:
+
+| Emoji | Purpose                | Example                     |
+|-------|------------------------|-----------------------------|
+| ✨    | New features           | `✨ Add 3-card spread logic`|
+| 🔮    | Tarot-related changes  | `🔮 Update card meanings`   |
+| 🕯️    | Bug fixes              | `🕯️ Fix candle animation`  |
+| 📜    | Documentation          | `📜 Add API docs`           |
+
+```bash
+git commit -m "✨ Implement Celtic Cross spread"
+```
+
+---
+
+## 📜 License
+MIT License - Free for mystical and mundane use alike.
+
+---
+
+> ✨ **Pro Tip**: Run `php artisan inspire` for daily developer tarot wisdom!
+```
+---
+<div align="center">
+  May the cosmos be with you | Powered by Laravel 12 <br>
+<i>Made by: Merci</i>
+</div>
+---
