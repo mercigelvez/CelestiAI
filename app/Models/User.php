@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'zodiac_sign',
         'birth_date',
     ];
 
