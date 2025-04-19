@@ -1,14 +1,15 @@
 <?php
 // routes/web.php
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReadingController;
 use App\Http\Controllers\WelcomeController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HoroscopeController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +48,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/readings', [ReadingController::class, 'store'])->name('readings.store');
     Route::get('/readings/{reading}', [ReadingController::class, 'show'])->name('readings.show');
     Route::get('/history', [ReadingController::class, 'history'])->name('readings.history');
+
+    // Horoscope routes
+    Route::get('/horoscopes/daily', [HoroscopeController::class, 'daily'])->name('horoscopes.daily');
+    Route::get('/horoscopes/weekly', [HoroscopeController::class, 'weekly'])->name('horoscopes.weekly');
+    Route::get('/horoscopes/compatibility', [HoroscopeController::class, 'compatibility'])->name('horoscopes.compatibility');
+    Route::post('/horoscopes/compatibility/results', [HoroscopeController::class, 'calculateCompatibilityResult'])->name('horoscopes.compatibility.calculate');
+
 });
