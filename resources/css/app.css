@@ -25,3 +25,23 @@
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
 }
+
+ /* Change dropdown option hover color */
+ select option:hover,
+ select option:focus,
+ select option:active,
+ select option:checked {
+     background: linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%) !important;
+     background-color: #8B5CF6 !important; /* Fallback */
+     color: white !important;
+ }
+
+ /* Custom styling for dropdown */
+ select option:hover {
+     box-shadow: 0 0 10px #D946EF;
+ }
+
+ /* Override the browser's default blue highlight */
+ select option:checked {
+     background: linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%) !important;
+ }
