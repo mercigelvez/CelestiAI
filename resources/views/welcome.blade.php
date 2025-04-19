@@ -48,7 +48,6 @@
         </div>
 
         <!-- Features section -->
-        <!-- Features section -->
         <div class="relative z-10 mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <!-- AI-Powered Insights -->
             <div
