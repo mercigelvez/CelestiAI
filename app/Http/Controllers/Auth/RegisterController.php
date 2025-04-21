@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -47,12 +48,40 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $validZodiacSigns = [
+            'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
+            'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'
+        ];
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9_]+$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'zodiac_sign' => ['nullable', 'string', 'max:255'],
-            'birth_date' => ['nullable', 'date'],
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed',
+                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'
+            ],
+            'zodiac_sign' => ['required', 'string', 'in:' . implode(',', $validZodiacSigns)],
+            'birth_date' => ['nullable', 'date', 'before_or_equal:' . Carbon::now()->subYears(13)->format('Y-m-d')],
+        ], [
+            'name.required' => 'Your mystical identity must be revealed',
+            'name.regex' => 'Your mystical name may only contain stellar letters, numerals, and cosmic underscores',
+
+            'email.required' => 'Your ethereal email address is essential for cosmic communication',
+            'email.email' => 'This email does not resonate with the universal pattern',
+            'email.unique' => 'This astral signature is already inscribed in our cosmic records',
+
+            'password.required' => 'A mystic seal is required to protect your cosmic journey',
+            'password.min' => 'Your arcane seal requires at least 8 symbols of power',
+            'password.confirmed' => 'Your arcane seals must align in cosmic harmony',
+            'password.regex' => 'Your arcane seal must contain celestial symbols (uppercase), earthly symbols (lowercase), numerical runes, and magical characters',
+
+            'zodiac_sign.required' => 'Your zodiac alignment is essential for cosmic guidance',
+            'zodiac_sign.in' => 'Please select a valid celestial sign',
+
+            'birth_date.before_or_equal' => 'You must have completed at least 13 revolutions around the sun',
         ]);
     }
 
@@ -68,8 +97,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'zodiac_sign' => $data['zodiac_sign'] ?? null,
-            'birth_date' => $data['birth_date'] ?? null,
+            'zodiac_sign' => $data['zodiac_sign'],
+            'birth_date' => isset($data['birth_date']) ? $data['birth_date'] : null,
         ]);
     }
 
