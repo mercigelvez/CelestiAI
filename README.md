@@ -3,14 +3,16 @@
 ⋆｡˚ A mystical web app that generates AI-powered tarot card readings with customizable spreads and intuitive interpretations ˚｡⋆
 
 <div align="center">
-  <img src="public/images/demo.png" alt="cosmo">
+  <img src="public/images/new-front-page.png" alt="cosmo">
+  <img src="public/images/sample-reading.png" alt="cosmo">
 </div>
 
 ---
 
 ## ⋆˚✩彡 Features ✩彡˚⋆
-- **✧ AI-Generated Readings**: NLP-powered interpretations
+- **✧ AI-Generated Readings**: AI-powered interpretations
 - **✧ Multiple Spreads**: Past-Present-Future, Celtic Cross, and more
+- **✧ Horoscope Reading**: Daily Horoscope, Compatibility, and more
 - **✧ User Profiles**: Save readings (with authentication)
 
 ---
@@ -39,6 +41,7 @@ Configure your `.env` files.
    ```
 2. Access `http://localhost:8000`
 3. Draw cards → Get AI-generated readings!
+4. Know what the universe says!
 
 ---
 
@@ -64,7 +67,7 @@ git commit -m "✨ Implement Celtic Cross spread"
 ```
 
 ## ✧･ﾟ License ･ﾟ✧
-MIT License - Free for mystical and mundane use alike.
+MIT License - Message me first, before using.
 
 ---
 
